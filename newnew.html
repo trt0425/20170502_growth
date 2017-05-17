@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Piano</title>
+    <script type="text/javascript">
+        function keyDown(event) {
+            // do
+            if (event.keyCode == 83) {
+                var canvas = document.getElementById('do');
+                canvas.innerHTML += '<audio src="sd/do.ogg" autoplay="autoplay">'
+            }
+            // ra
+            if (event.keyCode == 68) {
+                var canvas = document.getElementById('ra');
+                canvas.innerHTML += '<audio src="sd/ra.ogg" autoplay="autoplay">'
+            }
+            // mi
+            if (event.keyCode == 70) {
+                var canvas = document.getElementById('mi');
+                canvas.innerHTML += '<audio src="sd/mi.ogg" autoplay="autoplay">'
+            }
+            //fa
+            if (event.keyCode == 32) {
+                var canvas = document.getElementById('fa');
+                canvas.innerHTML += '<audio src="sd/fa.ogg" autoplay="autoplay">'
+            }
+            //sol
+            if (event.keyCode == 74) {
+                var canvas = document.getElementById('sol');
+                canvas.innerHTML += '<audio src="sd/sol.ogg" autoplay="autoplay">'
+            }
+            //la
+            if (event.keyCode == 75) {
+                var canvas = document.getElementById('la');
+                canvas.innerHTML += '<audio src="sd/la.ogg" autoplay="autoplay">'
+            }
+            //si
+            if (event.keyCode == 76) {
+                var canvas = document.getElementById('si');
+                canvas.innerHTML += '<audio src="sd/si.ogg" autoplay="autoplay">'
+            }
+        }
+    </script>
+</head>
+
+<body onkeydown="keyDown(event)" onkeyup="keyUp(event)">
+    <!--<div style="text-align:center"><img src="http://i.epochtimes.com/assets/uploads/2011/11/901310431571974.jpg" width="450" height="600"></div>-->
+    <script type="text/javascript">
+        var id = 1;
+
+        function next() {
+            id = (id + 1) % 5;
+            document.getElementById("image").src = 'imgs/' + id + '.jpg'; //动态设定src  
+            console.log(id);
+        }
+    </script>
+    <div style="text-align:center"><img style="center" id="image" width=600 height=450 onclick='next()' src='imgs/1.jpg' /></div>
+    <div id="do"></div>
+    <div id="ra"></div>
+    <div id="mi"></div>
+    <div id="fa"></div>
+    <div id="sol"></div>
+    <div id="la"></div>
+    <div id="si"></div>
+</body>
+
+</html>
